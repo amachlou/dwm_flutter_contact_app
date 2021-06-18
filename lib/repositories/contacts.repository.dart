@@ -15,7 +15,7 @@ class ContactsRepository {
   Future<List<Contact>> allContacts() async{
     var future = await Future.delayed(Duration(seconds: 1));
     int rnd = new Random().nextInt(10);
-    if(rnd > 3){
+    if(rnd > 1){
       return contacts.values.toList();
     }else{
       throw new Exception(("Network connexion"));
