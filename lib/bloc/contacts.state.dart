@@ -14,5 +14,5 @@ class ContactsState{
   String errorMessage;
   ContactsEvent currentEvent;
 
-  ContactsState({this.contacts, this.requestState, this.errorMessage, this.currentEvent});
+  ContactsState({required this.contacts,required this.requestState, required this.errorMessage, required this.currentEvent});
 }

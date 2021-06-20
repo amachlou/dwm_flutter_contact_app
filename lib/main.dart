@@ -1,3 +1,4 @@
+import 'package:dwm_flutter_contact_app/bloc/contacts.actions.dart';
 import 'package:dwm_flutter_contact_app/bloc/contacts.bloc.dart';
 import 'package:dwm_flutter_contact_app/bloc/contacts.state.dart';
 import 'package:dwm_flutter_contact_app/repositories/contacts.repository.dart';
@@ -12,15 +13,16 @@ void main(){
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  // const MyApp({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => ContactsBloc(
+        // required this.contacts,required this.requestState, required this.errorMessage, required this.currentEvent
           initialState: ContactsState(
-              contacts: [], errorMessage: '', requestState: RequestState.NONE
+              contacts: [], errorMessage: '', requestState: RequestState.NONE, currentEvent: new LoadStudentsEvent()
           ),
           contactsRepository: GetIt.instance<ContactsRepository>(),),)
       ],

@@ -8,17 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({Key key}) : super(key: key);
+  // const ContactPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Contacts'),),
-      body: Column(
+      body:
+      Column(
         children: [
           ContactsBarButtons(),
           Expanded(
             child: BlocBuilder<ContactsBloc, ContactsState>(builder: (context, state){
+              print('State value =====> ${state}');
               if(state.requestState == RequestState.LOADING){
                 return Center(child: CircularProgressIndicator());
               } else if(state.requestState == RequestState.ERROR){

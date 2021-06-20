@@ -6,5 +6,5 @@ class Contact {
   String type;
   int score;
 
-  Contact({this.id, this.name, this.profile, this.type, this.score});
+  Contact({required this.id, required this.name, required this.profile, required this.type, required this.score});
 }

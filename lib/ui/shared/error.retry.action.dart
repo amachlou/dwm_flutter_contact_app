@@ -5,7 +5,7 @@ class ErrorRetryMessage extends StatelessWidget {
   String errorMessage;
   Function onAction;
 
-  ErrorRetryMessage({this.errorMessage, this.onAction});
+  ErrorRetryMessage({required this.errorMessage, required this.onAction});
 
   @override
   Widget build(BuildContext context) {

@@ -4,11 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ContactsBarButtons extends StatelessWidget {
-  const ContactsBarButtons({Key key}) : super(key: key);
+  // const ContactsBarButtons({required Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
+      padding: EdgeInsets.only(bottom: 7.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
