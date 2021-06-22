@@ -1,5 +1,5 @@
-import 'package:dwm_flutter_contact_app/bloc/contacts.bloc.dart';
-import 'package:dwm_flutter_contact_app/bloc/contacts.state.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.bloc.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.state.dart';
 import 'package:dwm_flutter_contact_app/ui/shared/error.retry.action.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contacts.bar.buttons.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contacts.list.dart';

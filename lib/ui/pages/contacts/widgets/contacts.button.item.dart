@@ -1,6 +1,6 @@
-import 'package:dwm_flutter_contact_app/bloc/contacts.actions.dart';
-import 'package:dwm_flutter_contact_app/bloc/contacts.bloc.dart';
-import 'package:dwm_flutter_contact_app/bloc/contacts.state.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.actions.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.bloc.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

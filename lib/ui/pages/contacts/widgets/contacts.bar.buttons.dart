@@ -1,4 +1,4 @@
-import 'package:dwm_flutter_contact_app/bloc/contacts.actions.dart';
+import 'package:dwm_flutter_contact_app/bloc/contact/contacts.actions.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contacts.button.item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
