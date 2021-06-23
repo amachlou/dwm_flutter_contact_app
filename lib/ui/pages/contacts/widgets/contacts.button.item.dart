@@ -8,7 +8,7 @@ class ContactsButtonItem extends StatelessWidget {
   String buttonLabel;
   ContactsEvent contactsEvent;
 
-  ContactsButtonItem({required this.buttonLabel, required this.contactsEvent});
+  ContactsButtonItem({this.buttonLabel, this.contactsEvent});
 
   @override
   Widget build(BuildContext context) {

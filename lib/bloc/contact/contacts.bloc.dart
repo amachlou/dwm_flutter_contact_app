@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.actions.dart';
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.state.dart';
+import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/model/contact.model.dart';
 import 'package:dwm_flutter_contact_app/repositories/contacts.repository.dart';
 
@@ -10,7 +11,7 @@ class ContactsBloc extends Bloc<ContactsEvent, ContactsState>{
 
   ContactsRepository contactsRepository;
 
-  ContactsBloc({required ContactsState initialState, required this.contactsRepository}) : super(initialState);
+  ContactsBloc({ContactsState initialState, this.contactsRepository}) : super(initialState);
 
   @override
   Stream<ContactsState> mapEventToState(ContactsEvent event) async* {

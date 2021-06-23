@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ErrorRetryMessage extends StatelessWidget {
+class CircularProgressIndicator extends StatelessWidget {
   String errorMessage;
   Function onAction;
 
-  ErrorRetryMessage({ this.errorMessage, this.onAction});
+  CircularProgressIndicator({ this.errorMessage, this.onAction});
 
   @override
   Widget build(BuildContext context) {

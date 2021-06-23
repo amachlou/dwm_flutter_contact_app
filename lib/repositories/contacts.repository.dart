@@ -18,7 +18,7 @@ class ContactsRepository {
     if(rnd > 1){
       return contacts.values.toList();
     }else{
-      throw new Exception(("Network connexion"));
+      throw new Exception("Network connexion");
     }
   }
 
@@ -28,7 +28,7 @@ class ContactsRepository {
     if(rnd > 3){
       return contacts.values.toList().where((element) => element.type == type).toList();
     }else{
-      throw new Exception(("Network connexion"));
+      throw new Exception("Network connexion");
     }
   }
 

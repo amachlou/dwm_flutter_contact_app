@@ -2,6 +2,8 @@ import 'package:dwm_flutter_contact_app/bloc/contact/contacts.actions.dart';
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.bloc.dart';
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.state.dart';
 import 'package:dwm_flutter_contact_app/bloc/message/message.bloc.dart';
+import 'package:dwm_flutter_contact_app/bloc/message/message.state.dart';
+import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/repositories/contacts.repository.dart';
 import 'package:dwm_flutter_contact_app/repositories/messages.repository.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/contacts.page.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
               contacts: [], errorMessage: '', requestState: RequestState.NONE, currentEvent: new LoadStudentsEvent()
           ),
           contactsRepository: GetIt.instance<ContactsRepository>(),),),
-        BlocProvider(create: (context) => MessageBloc(initialeState: null, messageRepository: GetIt.instance<MessageRepository>()))
+        BlocProvider(create: (context) => MessageBloc(initialeState: MessageState.initialeState(), messageRepository: GetIt.instance<MessageRepository>()))
       ],
       child: MaterialApp(
         theme: ThemeData(primarySwatch: Colors.cyan),

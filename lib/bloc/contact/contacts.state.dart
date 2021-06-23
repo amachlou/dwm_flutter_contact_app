@@ -1,8 +1,8 @@
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.actions.dart';
+import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/model/contact.model.dart';
 
 
-enum RequestState {LOADING, LOADED, ERROR, NONE}
 
 class ContactsState{
 
@@ -11,5 +11,5 @@ class ContactsState{
   String errorMessage;
   ContactsEvent currentEvent;
 
-  ContactsState({required this.contacts,required this.requestState, required this.errorMessage, required this.currentEvent});
+  ContactsState({this.contacts, this.requestState, this.errorMessage, this.currentEvent});
 }

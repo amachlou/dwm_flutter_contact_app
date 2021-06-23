@@ -1,9 +1,7 @@
 import 'package:dwm_flutter_contact_app/bloc/message/message.actions.dart';
-import 'package:dwm_flutter_contact_app/model/contact.model.dart';
+import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/model/message.model.dart';
 
-
-enum RequestState {LOADING, LOADED, ERROR, NONE}
 
 class MessageState{
 
@@ -12,7 +10,7 @@ class MessageState{
   String errorMessage;
   MessageEvent currentEvent;
 
-  MessageState({ required this.messages, required this.requestState, required this.errorMessage, required this.currentEvent});
+  MessageState({ this.messages, this.requestState, this.errorMessage, this.currentEvent});
 
-  MessageState.initialeState() : requestState = RequestState.NONE, messages = [], errorMessage = '', currentEvent;
+  MessageState.initialeState() : requestState = RequestState.NONE, messages = [], errorMessage = '', currentEvent = null;
 }

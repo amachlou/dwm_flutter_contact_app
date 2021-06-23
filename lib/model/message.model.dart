@@ -6,5 +6,5 @@ class Message {
   String content;
   String type;
 
-  Message({ required this.id, required this.contactId, required this.dateTime, required this.content, required this.type});
+  Message({ this.id, this.contactId, this.dateTime, this.content, this.type});
 }

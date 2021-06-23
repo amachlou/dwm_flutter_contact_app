@@ -1,5 +1,6 @@
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.bloc.dart';
 import 'package:dwm_flutter_contact_app/bloc/contact/contacts.state.dart';
+import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/ui/shared/error.retry.action.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contacts.bar.buttons.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contacts.list.dart';
@@ -20,7 +21,6 @@ class ContactPage extends StatelessWidget {
           ContactsBarButtons(),
           Expanded(
             child: BlocBuilder<ContactsBloc, ContactsState>(builder: (context, state){
-              print('State value =====> ${state}');
               if(state.requestState == RequestState.LOADING){
                 return Center(child: CircularProgressIndicator());
               } else if(state.requestState == RequestState.ERROR){

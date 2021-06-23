@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ContactsList extends StatelessWidget {
   List<Contact> contacts;
 
-  ContactsList({required this.contacts});
+  ContactsList({ this.contacts});
 
   @override
   Widget build(BuildContext context) {
