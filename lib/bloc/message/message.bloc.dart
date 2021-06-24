@@ -10,8 +10,9 @@ import 'package:dwm_flutter_contact_app/repositories/messages.repository.dart';
 class MessageBloc extends Bloc<MessageEvent, MessageState>{
 
   MessageRepository messageRepository;
+  MessageBloc messageBloc;
 
-  MessageBloc({ MessageState initialeState, this.messageRepository}) : super(initialeState);
+  MessageBloc({ MessageState initialeState, this.messageRepository, this.messageBloc}) : super(initialeState);
 
   @override
   Stream<MessageState> mapEventToState(MessageEvent event) async* {

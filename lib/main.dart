@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
-void main(){
+void main() {
   GetIt.instance.registerLazySingleton(() => new ContactsRepository());
   GetIt.instance.registerLazySingleton(() => new MessageRepository());
   runApp(MyApp());
@@ -25,13 +25,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => ContactsBloc(
-        // required this.contacts,required this.requestState, required this.errorMessage, required this.currentEvent
-          initialState: ContactsState(
-              contacts: [], errorMessage: '', requestState: RequestState.NONE, currentEvent: new LoadStudentsEvent()
+        BlocProvider(
+          create: (context) => ContactsBloc(
+            initialState: ContactsState(
+                contacts: [],
+                errorMessage: '',
+                requestState: RequestState.NONE,
+                currentEvent: new LoadStudentsEvent()),
+            contactsRepository: GetIt.instance<ContactsRepository>()
           ),
-          contactsRepository: GetIt.instance<ContactsRepository>(),),),
-        BlocProvider(create: (context) => MessageBloc(initialeState: MessageState.initialeState(), messageRepository: GetIt.instance<MessageRepository>()))
+        ),
+        BlocProvider(
+            create: (context) => MessageBloc(
+                initialeState: MessageState.initialeState(),
+                messageRepository: GetIt.instance<MessageRepository>(), messageBloc: context.read<MessageBloc>()))
       ],
       child: MaterialApp(
         theme: ThemeData(primarySwatch: Colors.cyan),
