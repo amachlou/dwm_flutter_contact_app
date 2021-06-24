@@ -3,7 +3,7 @@ import 'package:dwm_flutter_contact_app/bloc/message/message.bloc.dart';
 import 'package:dwm_flutter_contact_app/bloc/message/message.state.dart';
 import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/model/contact.model.dart';
-import 'package:dwm_flutter_contact_app/ui/pages/messages/widgets/contact.info.widget.dart';
+import 'package:dwm_flutter_contact_app/ui/pages/contacts/widgets/contact.info.widget.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/messages/widgets/message.form.widget.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/messages/widgets/messages.list.widget.dart';
 import 'package:dwm_flutter_contact_app/ui/shared/error.retry.action.dart';

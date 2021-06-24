@@ -40,16 +40,11 @@ class MessageRepository {
   }
 
   Future<Message> addNewessage(Message message) async{
-    print('MEssageepo 1');
     var future = await Future.delayed(Duration(seconds: 1));
     int rnd = new Random().nextInt(10);
-    print('MEssageepo 2');
     if(rnd > 3){
-      print('MEssageepo 3');
-      print('M Counter:  ${messageCounter}');
       message.id = ++messageCounter;
       messages[message.id] = message;
-      print('MEssageepo 4');
       return message;
     }else{
       throw new Exception("Network connexion");

@@ -21,6 +21,7 @@ class MessagesForm extends StatelessWidget {
         children: [
           Expanded(
               child: TextFormField(
+                controller: textEditingController,
                 keyboardType: TextInputType.multiline,
             maxLines: null,
             decoration: InputDecoration(
@@ -31,9 +32,13 @@ class MessagesForm extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.send),
             onPressed: () {
-              // print(textEditingController.text);
               Message message = Message(type: 'sent', contactId: contact.id, content: textEditingController.text);
               context.read<MessageBloc>().add(new AddNewMessageEvent(message));
+
+              Message reply = Message(type: 'received', contactId: contact.id, content: 'Answer to ${textEditingController.text}');
+              context.read<MessageBloc>().add(new AddNewMessageEvent(reply));
+
+              textEditingController.text = '';
             },
           )
         ],
