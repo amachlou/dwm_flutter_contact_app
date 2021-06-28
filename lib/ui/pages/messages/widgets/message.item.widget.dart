@@ -23,7 +23,7 @@ class MessageItem extends StatelessWidget {
             padding: EdgeInsets.all(10),
             foregroundDecoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.amberAccent, width: 1),
+              border: Border.all(color: Colors.lightGreen, width: 1),
             ),
             child: Text(
                 '${message.content} (${message.dateTime.hour}:${message.dateTime.minute})'),

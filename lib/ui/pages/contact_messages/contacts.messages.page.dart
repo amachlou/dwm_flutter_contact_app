@@ -44,7 +44,7 @@ class ContactsWithMessages extends StatelessWidget {
                     Text('${state.contacts[index].score}'),
                   ]),
                   decoration: BoxDecoration(
-                      border: Border.all(width: 2, color: Colors.cyan)),
+                      border: Border.all(width: 2, color: Colors.black12)),
                 ),
                 itemCount: state.contacts.length,
                 scrollDirection: Axis.horizontal,

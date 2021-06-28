@@ -19,12 +19,12 @@ class ContactsButtonItem extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border.all(
                   width: (state.currentEvent.runtimeType == contactsEvent.runtimeType ? 2 : 0),
-                  color: Colors.amber
+                  color: Colors.lightGreen
               )
           ),
           child: RaisedButton(onPressed: () => {
             context.read<ContactsBloc>().add(contactsEvent)
-          }, child: Text(buttonLabel, style: TextStyle(color: Colors.white)), color: Colors.amber,),
+          }, child: Text(buttonLabel, style: TextStyle(color: Colors.blue)), color: Colors.cyan,),
         );
       },
     );

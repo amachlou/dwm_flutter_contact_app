@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.cyan),
+        theme: ThemeData(primarySwatch: Colors.blue),
         routes: {
           '/contacts': (context) => ContactPage(),
           '/messages': (context) => MessagesPage(),
