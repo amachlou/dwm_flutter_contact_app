@@ -6,6 +6,7 @@ import 'package:dwm_flutter_contact_app/bloc/message/message.state.dart';
 import 'package:dwm_flutter_contact_app/enums/request.state.bloc.dart';
 import 'package:dwm_flutter_contact_app/repositories/contacts.repository.dart';
 import 'package:dwm_flutter_contact_app/repositories/messages.repository.dart';
+import 'package:dwm_flutter_contact_app/ui/pages/contact_messages/contacts.messages.page.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/contacts/contacts.page.dart';
 import 'package:dwm_flutter_contact_app/ui/pages/messages/messages.page.dart';
 import 'package:flutter/material.dart';
@@ -25,26 +26,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        // BlocProvider(
+        //   create: (context) => MessageBloc(
+        //     initialeState: MessageState.initialeState(),
+        //     messageRepository: GetIt.instance<MessageRepository>(),
+        //     messageBloc: context.read<MessageBloc>(),
+        //   ),
+        // ),
         BlocProvider(
-          create: (context) => ContactsBloc(
-            initialState: ContactsState(
-                contacts: [],
-                errorMessage: '',
-                requestState: RequestState.NONE,
-                currentEvent: new LoadStudentsEvent()),
-            contactsRepository: GetIt.instance<ContactsRepository>()
+          create: (context) => MessageBloc(
+            initialeState: MessageState.initialeState(),
+            messageRepository: GetIt.instance<MessageRepository>(),
+            // messageBloc: context.read<MessageBloc>(),
           ),
         ),
         BlocProvider(
-            create: (context) => MessageBloc(
-                initialeState: MessageState.initialeState(),
-                messageRepository: GetIt.instance<MessageRepository>(), messageBloc: context.read<MessageBloc>()))
+          create: (context) => ContactsBloc(
+            initialState: ContactsState(
+              contacts: [],
+              errorMessage: '',
+              requestState: RequestState.NONE,
+              currentEvent: new LoadStudentsEvent(),
+            ),
+            contactsRepository: GetIt.instance<ContactsRepository>(),
+            // messageBloc: context.read<MessageBloc>(),
+          ),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData(primarySwatch: Colors.cyan),
         routes: {
           '/contacts': (context) => ContactPage(),
-          '/messages': (context) => MessagesPage()
+          '/messages': (context) => MessagesPage(),
+          '/contactsWithMessages': (context) => ContactsWithMessages(),
         },
         initialRoute: '/contacts',
       ),

@@ -22,7 +22,7 @@ class MessageRepository {
   Future<List<Message>> allMessages() async{
     var future = await Future.delayed(Duration(seconds: 1));
     int rnd = new Random().nextInt(10);
-    if(rnd > 1){
+    if(true){
       return messages.values.toList();
     }else{
       throw new Exception("Network connexion");
@@ -32,7 +32,7 @@ class MessageRepository {
   Future<List<Message>> messagesByContact(int contactId) async{
     var future = await Future.delayed(Duration(seconds: 1));
     int rnd = new Random().nextInt(10);
-    if(rnd > 3){
+    if(true){
       return messages.values.toList().where((element) => element.contactId == contactId).toList();
     }else{
       throw new Exception("Network connexion");
